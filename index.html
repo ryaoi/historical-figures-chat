@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+	<head>
+        <title>Historical Figures Chat</title>
+		<link rel="stylesheet" href="index.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="UTF-8">
+	</head>
+
+	<body>
+		<header>
+            <h1>偉人に聞こう！</h1>
+		</header>
+		<main>
+			<section class="chat-container">
+                <select id="historical-figure-select">
+                    <option value="">歴史上の人物を選択してください...</option>
+                    <option value="shibusawa">渋沢栄一</option>
+                    <option value="tsuda">津田梅子</option>
+                    <option value="kitasato">北里柴三郎</option>
+                </select>
+				<div class="chat-history" id="chat-history">
+					<div class="welcome-message">
+						歴史上の人物を選んでチャットを始めましょう！
+					</div>
+				</div>
+				<div class="chat-input-container">
+					<form id="chat-form">
+						<div class="input-wrapper">
+							<input 
+								type="text" 
+								id="chat-input" 
+								placeholder="メッセージを入力してください..."
+								autocomplete="off"
+							>
+							<button type="submit" class="send-button">
+								<svg viewBox="0 0 24 24" width="24" height="24">
+									<path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+								</svg>
+							</button>
+						</div>
+					</form>
+				</div>
+			</section>
+		</main>
+		<footer>
+			&copy; 偉人に聞こう
+		</footer>
+		<script src="index.js" type="module"></script>
+	</body>
+
+</html>

@@ -1,0 +1,14 @@
+{
+    "name": "talk-to-history",
+    "description": "This website allows you to talk to historical figures.",
+    "scripts": {
+        "start": "vite",
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "openai": "^4.72.0",
+        "vite": "latest"
+    }
+}
