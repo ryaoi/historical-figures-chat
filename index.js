@@ -148,8 +148,6 @@ async function fetchAIResponse(userMessage) {
         
         appendMessageForAI(response.choices[0].message.content)
     } catch (err) {
-        console.log(err.status, "=", err.code)
-        console.log(err.message)
         console.error('OpenAI API Error:', err)
         const errorMessage = `⚠️ エラーが発生しました。${formatErrorMessage(err)}`
         throw new Error(errorMessage)
