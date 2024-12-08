@@ -1,5 +1,3 @@
-import OpenAI from "openai"
-
 const chatHistory = document.getElementById('chat-history')
 const chatForm = document.getElementById('chat-form')
 const figureSelect = document.getElementById('historical-figure-select')
@@ -115,43 +113,7 @@ function appendMessageForAI(content) {
 }
 
 async function fetchAIResponse(userMessage) {
-    const openai = new OpenAI({
-        apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-        dangerouslyAllowBrowser: true // ⚠️ 警告: これは学習用の設定です。本番環境では絶対に使用しないでください。
-                                     // APIキーがクライアントサイドに露出し、悪用される危険があります。
-                                     // 本番環境では必ずサーバーサイドでAPIを呼び出してください。
-    })
-
-    chatMessages.push({
-        role: 'user',
-        content: userMessage
-    })
-
-    const messages = [
-        {
-            role: 'system',
-            content: `あなたは${HISTORICAL_FIGURES[selectedFigure].name}です。この歴史的人物として日本語で応答してください。`
-        },
-        ...chatMessages
-    ]
-
-    try {
-        const response = await openai.chat.completions.create({
-            model: 'gpt-4',
-            messages: messages,
-        })
-        
-        chatMessages.push({
-            role: 'assistant',
-            content: response.choices[0].message.content
-        })
-        
-        appendMessageForAI(response.choices[0].message.content)
-    } catch (err) {
-        console.error('OpenAI API Error:', err)
-        const errorMessage = `⚠️ エラーが発生しました。${formatErrorMessage(err)}`
-        throw new Error(errorMessage)
-    }
+    appendMessageForAI('こんにちは')
 }
 
 function formatErrorMessage(error) {
