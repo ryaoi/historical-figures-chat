@@ -1,5 +1,5 @@
 {
-    "name": "talk-to-history",
+    "name": "historical-figures-chat",
     "description": "This website allows you to talk to historical figures.",
     "scripts": {
         "start": "vite",
